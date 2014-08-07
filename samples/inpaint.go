@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"os"
 
-	"code.google.com/p/go-opencv/opencv"
+	"github.com/chai2010/go-opencv/opencv"
 )
 
 func main() {

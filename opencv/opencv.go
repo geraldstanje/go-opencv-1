@@ -4,11 +4,13 @@
 
 package opencv
 
-import(
+/*
+#cgo pkg-config: opencv
+#cgo windows CFLAGS: -fno-stack-check -fno-stack-protector -mno-stack-arg-probe
+
+#include "opencv.h"
+*/
+import "C"
+import (
 //	"image"
 )
-
-//-----------------------------------------------------------------------------
-// End
-//-----------------------------------------------------------------------------
-

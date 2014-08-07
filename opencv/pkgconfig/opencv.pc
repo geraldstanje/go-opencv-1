@@ -1,0 +1,40 @@
+# Package Information for pkg-config
+
+# Copyright 2014 <chaishushan{AT}gmail.com>. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+# OpenCV: Win7/64bit
+
+prefix=
+opencv_root=C:/opencv/opencv242/build
+exec_prefix=${opencv_root}/x64/mingw/bin
+libdir=${opencv_root}/x64/mingw/lib
+includedir_old=${opencv_root}/include/opencv
+includedir_new=${opencv_root}/include
+lib_suffix=242.dll
+
+Name: OpenCV
+Description: Open Source Computer Vision Library
+Version: 2.4.2
+Cflags: -I${includedir_old} -I${includedir_new}
+Libs: -L${libdir} -lopencv_calib3d242.dll -lopencv_contrib242.dll -lopencv_core242.dll -lopencv_features2d242.dll -lopencv_flann242.dll -lopencv_gpu242.dll -lopencv_highgui242.dll -lopencv_imgproc242.dll -lopencv_legacy242.dll -lopencv_ml242.dll -lopencv_nonfree242.dll -lopencv_objdetect242.dll -lopencv_photo242.dll -lopencv_stitching242.dll -lopencv_ts242 -lopencv_video242.dll -lopencv_videostab242.dll
+
+# opencv242 libs
+# libopencv_calib3d242.dll.a
+# libopencv_contrib242.dll.a
+# libopencv_core242.dll.a
+# libopencv_features2d242.dll.a
+# libopencv_flann242.dll.a
+# libopencv_gpu242.dll.a
+# libopencv_highgui242.dll.a
+# libopencv_imgproc242.dll.a
+# libopencv_legacy242.dll.a
+# libopencv_ml242.dll.a
+# libopencv_nonfree242.dll.a
+# libopencv_objdetect242.dll.a
+# libopencv_photo242.dll.a
+# libopencv_stitching242.dll.a
+# libopencv_ts242.a
+# libopencv_video242.dll.a
+# libopencv_videostab242.dll.a

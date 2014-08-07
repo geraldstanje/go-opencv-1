@@ -7,20 +7,25 @@
 #ifndef _GO_OPENCV_BINDING_H_
 #define _GO_OPENCV_BINDING_H_
 
-#if defined(__linux) || defined(__linux__)
-//  OpenCV 2.0.x
-#   include <opencv/cv.h>
-#   include <opencv/highgui.h>
-#elif defined(WIN32) || defined(_WIN32)
-//  OpenCV 2.4.x
-#   include <opencv/cv.h>
-#   include <opencv/highgui.h>
+#include <cv.h> // include opencv version
+
+// opencv version helper
+#ifndef CV_MAKE_VERSION
+#define CV_MAKE_VERSION(a,b,c) (((a) << 16) | ((b) << 8) | (c))
+#endif
+#ifndef CV_VERSION_NUM
+#define CV_VERSION_NUM CV_MAKE_VERSION(CV_MAJOR_VERSION,CV_MINOR_VERSION,CV_SUBMINOR_VERSION)
+#endif
+
+// include opencv headers (must incude version only first!)
+#if (CV_VERSION_NUM < CV_MAKE_VERSION(2,0,0))   // opencv 1.x
+#   include <highgui.h>
+#elif (CV_VERSION_NUM < CV_MAKE_VERSION(2,4,0)) // opencv 2.0/2.1/2.2/2.3
+#   include <highgui.h>
 #   include <opencv2/photo/photo_c.h>
 #   include <opencv2/imgproc/imgproc_c.h>
-#else   // Mac OS X ?
-//  OpenCV 2.4.x ?
-#   include <opencv/cv.h>
-#   include <opencv/highgui.h>
+#else
+#   include <highgui.h>
 #   include <opencv2/photo/photo_c.h>
 #   include <opencv2/imgproc/imgproc_c.h>
 #endif
